@@ -3,7 +3,7 @@ angular.module('plantsApp', []).controller('PlantCtrl', function($scope, $http){
 	
 	$http({
 		method: 'GET',
-		url: 'http://raspberrypi/plant/all',
+		url: 'http://raspberrypi:8080/plant/all',
 		headers: {
 		  'Content-Type':'application/json',
 		  'Authorization': 'basic' + auth
@@ -16,7 +16,7 @@ angular.module('plantsApp', []).controller('PlantCtrl', function($scope, $http){
 
 	$http({
 		method: 'GET',
-		url: 'http://raspberrypi/plant/0/',
+		url: 'http://raspberrypi:8080/plant/0/',
 		headers: {
 			'Content-Type':'application/json',
 			'Authorization': 'basic' + auth
@@ -32,7 +32,7 @@ angular.module('plantsApp', []).controller('PlantCtrl', function($scope, $http){
 
 	$http({
 		method: 'GET',
-		url: 'http://raspberrypi/plant/0/humidity',
+		url: 'http://raspberrypi:8080/plant/0/humidity',
 		headers: {
 			'Content-Type':'application/json',
 			'Authorization': 'basic' + auth
@@ -47,7 +47,7 @@ angular.module('plantsApp', []).controller('PlantCtrl', function($scope, $http){
 	$scope.water = function() {
 		$http({
 			method: 'GET',
-			url: 'http://raspberrypi/plant/0/water',
+			url: 'http://raspberrypi:8080/plant/0/water',
 			headers: {
 				'Content-Type':'application/json',
 				'Authorization': 'basic' + auth
