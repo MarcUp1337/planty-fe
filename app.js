@@ -1,4 +1,4 @@
-angular.module('plantsApp', []).controller('PlantCtrl', function($scope, $http){
+angular.module('plantApp', []).controller('PlantCtrl', function($scope, $http){
 	var auth = window.btoa("admin:PlantsVsZombies");
 	
 	$http({
@@ -23,9 +23,6 @@ angular.module('plantsApp', []).controller('PlantCtrl', function($scope, $http){
 		}
 	}).then(function(response) {
 		$scope.plant0 = response.data;
-		
-		
-		
 	}, function(response) {
 		console.log('error',response)
 	});
