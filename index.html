@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="plantApp">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<script src="Chart.js"></script>
-		<script src="DataFunctions.js"></script>
-		<script src="ChartFunctions.js"></script>
-		
-		<title>Plants</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-		<script src="app.js"></script>
-	</head>
-	
-	<script type="text/javascript">
-		var colorBlue = '#1ca8dd';
-		var colorDarkBlue = '#80C2FF'; 
-		var colorGreen = '#1bc98e';
-		var colorDarkGreen = '#7AB329';
-		var colorYellow = '#EEDF37';
-		var colorDarkYellow = '#B3A829';
-		var colorRed = '#EE5537';
-		var colorDarkRed = '#B34029';
-		var colorLightGrey = '#DFDFDF';
-		var colorDarkGrey = '#252830';
-	</script>
-	
-	<body style="background-color: #252830;">
-		<div class="container">
-			<div class="row" ng-controller="PlantCtrl">
-				<div class="col-sm-6 col-md-4 col-lg-4">
-					<div align="center">
-						<h1 id="title" style="text-align: center; color:#DFDFDF;">{{plant0.name}}</h1>
-						
-						<canvas style="padding-bottom: 30px;padding-top: 30px;" id="waterRing"></canvas>
-						
-						<h1 id="heatInfo" style="text-align: center; color:#DFDFDF;"></h1>
-						<h1 id="info" style="text-align: center; color:#DFDFDF;"></h1>
-						<p id="value" style="text-align: center; color:#DFDFDF;">{{plant0.humidity}}</p>
-						
-						<button class="btn" ng-href='#here' ng-click='water()'>gießen</button>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-4">
-					<div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-4">
-					<div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<a href="#" ng-click="addNewFeed()">Add New RSS Feed</a>
-		<table ng-table="tableParams">
-			<tr ng-repeat="row in $data track by row.id">
-				<td data-title="'Name'" sortable="'name'">{{row.name}}</td>
-				<td data-title="'Feed URL'" sortable="'url'">{{row.url}}</td>
-				<td data-title="'Actions'">
-					<a href="#" ng-click="editFeed(row) ">Edit</a>
-					<a href="#" ng-click="confirmDelete(row.id) ">Delete</a>
-				</td>
-			</tr>
-		</table>
-		</div>
-	</body>
+    <script src="Chart.js"></script>
+    <script src="DataFunctions.js"></script>
+    <script src="ChartFunctions.js"></script>
+
+    <title>Plants</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<script type="text/javascript">
+    var colorBlue = '#1ca8dd';
+    var colorDarkBlue = '#80C2FF';
+    var colorGreen = '#1bc98e';
+    var colorDarkGreen = '#7AB329';
+    var colorYellow = '#EEDF37';
+    var colorDarkYellow = '#B3A829';
+    var colorRed = '#EE5537';
+    var colorDarkRed = '#B34029';
+    var colorLightGrey = '#DFDFDF';
+    var colorDarkGrey = '#252830';
+</script>
+
+<body style="background-color: #252830;">
+<div class="container">
+    <div class="row" ng-controller="PlantCtrl">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div align="center">
+                <h1 id="title" style="text-align: center; color:#DFDFDF;">{{plant0.name}}</h1>
+
+                <canvas style="padding-bottom: 30px;padding-top: 30px;" id="waterRing"></canvas>
+
+                <h1 id="heatInfo" style="text-align: center; color:#DFDFDF;"></h1>
+                <h1 id="info" style="text-align: center; color:#DFDFDF;"></h1>
+                <p id="value" style="text-align: center; color:#DFDFDF;">{{plant0.humidity}}</p>
+
+                <button class="btn" ng-href='#here' ng-click='water()'>gießen</button>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<a href="#" ng-click="addNewFeed()">Add New RSS Feed</a>-->
+<table ng-table="tableParams">
+    <tr ng-repeat="row in $data track by row.id">
+        <td data-title="'Name'" sortable="'name'">{{row.name}}</td>
+        <td data-title="'Feed URL'" sortable="'url'">{{row.url}}</td>
+        <td data-title="'Actions'">
+            <a href="#" ng-click="editFeed(row) ">Edit</a>
+            <a href="#" ng-click="confirmDelete(row.id) ">Delete</a>
+        </td>
+    </tr>
+</table>
+</div>
+</body>
 </html>
