@@ -1,0 +1,36 @@
+{
+  "plant": [
+    {
+      "all": [
+        {
+          "name": "Astronaut",
+          "waterPumpAddr": 4,
+          "spiChannel": 0,
+          "noWaterMark": 70,
+          "waterDuration": 15
+        },
+        {
+          "name": "Bassist",
+          "waterPumpAddr": 5,
+          "spiChannel": 1,
+          "noWaterMark": 70,
+          "waterDuration": 15
+        }
+      ],
+      "0": {
+        "name": "Astronaut",
+        "waterPumpAddr": 4,
+        "spiChannel": 0,
+        "noWaterMark": 70,
+        "waterDuration": 15
+      },
+      "1": {
+        "name": "Bassist",
+        "waterPumpAddr": 5,
+        "spiChannel": 1,
+        "noWaterMark": 70,
+        "waterDuration": 15
+      }
+    }
+  ]
+}
